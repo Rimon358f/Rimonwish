@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .about {
+            text-align: center;
+        }
+        .about img {
+            width: 150px;
+            border-radius: 50%;
+        }
+        .post-section {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+        .post-form {
+            margin-top: 10px;
+        }
+        .post-form textarea {
+            width: 100%;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+        .posts {
+            margin-top: 20px;
+        }
+        .post {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>About Me</h1>
+
+    <div class="about">
+        <img src="image.png" alt="My Image">
+        <p>Hello! I'm Rimon, a creative student. I enjoy web development and sharing knowledge with others. Feel free to post a message below!</p>
+    </div>
+
+    <div class="post-section">
+        <h2>User Posts</h2>
+        <div class="posts" id="posts"></div>
+        
+        <div class="post-form">
+            <textarea id="postContent" placeholder="Write your post here..."></textarea>
+            <button onclick="addPost()">Post</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to add posts
+        function addPost() {
+            const postContent = document.getElementById('postContent').value;
+            if (postContent.trim() !== "") {
+                const postDiv = document.createElement('div');
+                postDiv.classList.add('post');
+                postDiv.innerText = postContent;
+                document.getElementById('posts').appendChild(postDiv);
+                document.getElementById('postContent').value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
